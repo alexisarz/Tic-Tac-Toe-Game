@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.tateti {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    width: 45%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 400px;
+
+}
+
+
+.ticContainer {
+    border: 1px solid #9e9e9e;
+    padding: 40%;
+    cursor: pointer;
+    
+}
+
+
+
+#cartelGanador{
+    width: 45%;
+    margin: auto;
+    margin-top: 150px;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
