@@ -3,6 +3,20 @@
     padding: 0;
 }
 
+.header{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    border: 1px solid rgb(243, 122, 41);
+    justify-content: center;
+    padding: 10px;
+    background-color: rgb(232, 243, 78);
+}
+
+h1, h4{
+    margin: 0px 5px;
+    color: rgb(196, 81, 0);
+}
+
 
 .tateti {
     display: grid;
@@ -29,11 +43,53 @@
 #cartelGanador{
     width: 45%;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 100px;
     padding: 10px;
     font-size: 30px;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
+}
+
+
+
+/*------RESPONSIVE-----*/
+
+
+@media (max-width: 540px){
+    .tateti{
+        width: 80%;
+       
+    }
+
+    #cartelGanador{
+        margin-top: 50px;
+    }
+}
+
+
+@media (max-width: 414px){
+    .tateti{
+        width: 95%;
+       
+    }
+
+    #cartelGanador{
+        margin-top: 50px;
+    }
+}
+
+
+
+@media (max-width: 360px){
+    .tateti{
+        width: 95%;
+        height: 350px;
+       
+    }
+
+    #cartelGanador{
+        margin-top: 50px;
+    }
 }
 

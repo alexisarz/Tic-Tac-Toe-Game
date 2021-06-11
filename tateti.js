@@ -30,12 +30,12 @@ function Juego(){
         //Funcion de cartel ganador 
         function GanadorAzul(){
             cartel.style.color = "blue";
-            cartel.innerHTML = "Ganador jugador AZUL!!!";
+            cartel.innerHTML = "Ganador jugador Azul!";
         }
 
         function GanadorRojo(){
             cartel.style.color = "red";
-            cartel.innerHTML = "Ganador jugador ROJO!!!";
+            cartel.innerHTML = "Ganador jugador Rojo!";
         }
 
         function Empate(){
