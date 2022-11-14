@@ -9,7 +9,7 @@
     border: 1px solid rgb(243, 122, 41);
     justify-content: center;
     padding: 10px;
-    background-color: rgb(232, 243, 78); /*:)*/
+    background-color: rgb(232, 243, 78);
 }
 
 h1, h4{
@@ -43,7 +43,10 @@ h1, h4{
 #cartelGanador{
     width: 45%;
     margin: auto;
-    margin-top: 100px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 10%;
     padding: 10px;
     font-size: 30px;
     text-align: center;

@@ -14,6 +14,14 @@ var c3 = document.getElementById('C3');
 
 var cartel = document.getElementById('cartelGanador');
 
+//Reload post resultado
+
+function Reload(){
+    setTimeout(() => {
+        window.location.reload();
+    }, 2000);
+}
+
 //Funcion general del juego
 
 function Juego(){
@@ -30,20 +38,23 @@ function Juego(){
         //Funcion de cartel ganador 
         function GanadorAzul(){
             cartel.style.color = "blue";
-            cartel.innerHTML = "Ganador jugador Azul!";
+            cartel.innerHTML = "Ganador jugador Azul!</br> Reiniciando...";
+            Reload()
         }
 
         function GanadorRojo(){
             cartel.style.color = "red";
-            cartel.innerHTML = "Ganador jugador Rojo!";
+            cartel.innerHTML = "Ganador jugador Rojo!</br> Reiniciando...";
+            Reload()
         }
 
         function Empate(){
             cartel.style.color = "purple";
-            cartel.innerHTML = "EMPATE"
+            cartel.innerHTML = "EMPATE</br> Reiniciando..."
+            Reload()
         }
         //Coloreo de casillas azules y cambio de jugador
-        if (jugador == true){
+        if (jugador == true && casillero.style.background !== "red"){
             casillero.style.background = "blue";
             jugador = !jugador;
             clickCounter++
@@ -73,7 +84,7 @@ function Juego(){
         }
         
         //Coloreo de casillas rojas y cambio de jugador
-        else if (jugador == false){
+        else if (jugador == false && casillero.style.background !== "blue"){
             casillero.style.background = "red";
             jugador = !jugador;
             clickCounter++
