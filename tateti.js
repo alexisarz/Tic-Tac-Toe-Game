@@ -10,16 +10,30 @@ var a3 = document.getElementById('A3');
 var b3 = document.getElementById('B3');
 var c3 = document.getElementById('C3');
 
-//Cartel ganador
+//COLORES
 
-var cartel = document.getElementById('cartelGanador');
+var red = '#FF1919';
+var blue = '#1919FF';
 
 //Reload post resultado
 
 function Reload(){
-    setTimeout(() => {
-        window.location.reload();
-    }, 2000);
+    window.location.reload();   
+}
+
+//Cartel ganador
+
+function cartelResultado(msj, wincolor){
+    Swal.fire({
+        title: msj,
+        confirmButtonText: 'Jugar otra vez!',
+        allowOutsideClick: false,
+        confirmButtonColor: wincolor
+      }).then((result) => {
+        if(result.isConfirmed){
+            Reload()
+        }
+      })
 }
 
 //Funcion general del juego
@@ -37,39 +51,33 @@ function Juego(){
         
         //Funcion de cartel ganador 
         function GanadorAzul(){
-            cartel.style.color = "blue";
-            cartel.innerHTML = "Ganador jugador Azul!</br> Reiniciando...";
-            Reload()
+           cartelResultado('Ganador jugador azul!', 'blue')
         }
 
         function GanadorRojo(){
-            cartel.style.color = "red";
-            cartel.innerHTML = "Ganador jugador Rojo!</br> Reiniciando...";
-            Reload()
+            cartelResultado('Ganador jugador rojo!', 'red')
         }
 
         function Empate(){
-            cartel.style.color = "purple";
-            cartel.innerHTML = "EMPATE</br> Reiniciando..."
-            Reload()
+            cartelResultado('Empate!', 'violette')
         }
         //Coloreo de casillas azules y cambio de jugador
-        if (jugador == true && casillero.style.background !== "red"){
-            casillero.style.background = "blue";
+        if (jugador == true && casillero.style.background !== red){
+            casillero.style.background = blue;
             jugador = !jugador;
             clickCounter++
             //Probabilidades de ganador azul
                 //Horizontal
-            if ((a1.style.background == "blue" && b1.style.background == "blue" && c1.style.background == "blue") ||
-                (a2.style.background == "blue" && b2.style.background == "blue" && c2.style.background == "blue") ||
-                (a3.style.background == "blue" && b3.style.background == "blue" && c3.style.background == "blue") ||
+            if ((a1.style.background == blue && b1.style.background == blue && c1.style.background == blue) ||
+                (a2.style.background == blue && b2.style.background == blue && c2.style.background == blue) ||
+                (a3.style.background == blue && b3.style.background == blue && c3.style.background == blue) ||
                 //Vertical
-                (a1.style.background == "blue" && a2.style.background == "blue" && a3.style.background == "blue") ||
-                (b1.style.background == "blue" && b2.style.background == "blue" && b3.style.background == "blue") ||
-                (c1.style.background == "blue" && c2.style.background == "blue" && c3.style.background == "blue") ||
+                (a1.style.background == blue && a2.style.background == blue && a3.style.background == blue) ||
+                (b1.style.background == blue && b2.style.background == blue && b3.style.background == blue) ||
+                (c1.style.background == blue && c2.style.background == blue && c3.style.background == blue) ||
                 //Diagonal 
-                (a1.style.background == "blue" && b2.style.background == "blue" && c3.style.background == "blue") ||
-                (c1.style.background == "blue" && b2.style.background == "blue" && a3.style.background == "blue")){
+                (a1.style.background == blue && b2.style.background == blue && c3.style.background == blue) ||
+                (c1.style.background == blue && b2.style.background == blue && a3.style.background == blue)){
                     
                     
                 return GanadorAzul()
@@ -84,22 +92,22 @@ function Juego(){
         }
         
         //Coloreo de casillas rojas y cambio de jugador
-        else if (jugador == false && casillero.style.background !== "blue"){
-            casillero.style.background = "red";
+        else if (jugador == false && casillero.style.background !== blue){
+            casillero.style.background = red;
             jugador = !jugador;
             clickCounter++
             //Probabilidades de ganador rojo
                 //Horizontal
-            if ((a1.style.background == "red" && b1.style.background == "red" && c1.style.background == "red") ||
-                (a2.style.background == "red" && b2.style.background == "red" && c2.style.background == "red") ||
-                (a3.style.background == "red" && b3.style.background == "red" && c3.style.background == "red") ||
+            if ((a1.style.background == red && b1.style.background == red && c1.style.background == red) ||
+                (a2.style.background == red && b2.style.background == red && c2.style.background == red) ||
+                (a3.style.background == red && b3.style.background == red && c3.style.background == red) ||
                 //Vertical
-                (a1.style.background == "red" && a2.style.background == "red" && a3.style.background == "red") ||
-                (b1.style.background == "red" && b2.style.background == "red" && b3.style.background == "red") ||
-                (c1.style.background == "red" && c2.style.background == "red" && c3.style.background == "red") ||
+                (a1.style.background == red && a2.style.background == red && a3.style.background == red) ||
+                (b1.style.background == red && b2.style.background == red && b3.style.background == red) ||
+                (c1.style.background == red && c2.style.background == red && c3.style.background == red) ||
                 //Diagonal 
-                (a1.style.background == "red" && b2.style.background == "red" && c3.style.background == "red") ||
-                (c1.style.background == "red" && b2.style.background == "red" && a3.style.background == "red")){
+                (a1.style.background == red && b2.style.background == red && c3.style.background == red) ||
+                (c1.style.background == red && b2.style.background == red && a3.style.background == red)){
                     
                     
                 return GanadorRojo()
